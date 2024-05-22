@@ -33,6 +33,17 @@
       margin: 10px auto;
     }
 
+    .list-centered {
+      list-style: none; /* Remove default list style */
+      padding: 0;
+      text-align: left;
+      margin: 0 auto; /* Center align the list */
+    }
+    
+    .list-centered li {
+      margin-left: 1.5em; /* Indent list items */
+    }
+
     .col-md-8 {
       width: 700px;
       margin: 10px auto;
@@ -109,19 +120,21 @@
   <h2 class="fixed-width">Approach</h2>
   <p class="center-align fixed-width text-justify">
     The purpose of our study is to verify the extent to which the performance of pointing frame estimations can be enhanced through the integration of human speech data during human-robot interactions involving gestures and language. 
-    We introduce a pointing frame estimator that leverages human speech information across various scenarios where individuals provide instructions to a robot using gestures and language. 
-  　
-    1.　A scenario involving verbal utterances including daily conversations
-    2.　A scenario in which a user's posture is not consistently upright
-    3.　A scenario in which a user's movements include actions beyond pointing
-    4.　A scenario in which the referenced object is outside the visual scope of the robot
-  
+    We introduce a pointing frame estimator that leverages human speech information across various scenarios where individuals provide instructions to a robot using gestures and language.
+  </p>
+  <ul class="fixed-width list-centered">
+    <li>A scenario involving verbal utterances including daily conversations</li>
+    <li>A scenario in which a user's posture is not consistently upright</li>
+    <li>A scenario in which a user's movements include actions beyond pointing</li>
+    <li>A scenario in which the referenced object is outside the visual scope of the robot</li>
+  </ul>
+  <p class="center-align fixed-width text-justify">
     We gather audio-visual time series data from the robot under these specified conditions and train our pointing frame estimator, allowing us to accurately estimate pointing frames in real-world scenarios.
     We also investigate which audio features are better at estimating pointing frames.
     We incorporate speech data into the pointing frame estimation framework proposed by Chen et al. to estimate the pointing frame under conditions of natural communication between a human and a daily life service robot. 
     An overview of the proposed model is depicted in Figure.
   </p>
-
+  
   <div class="image-container">
     <img src="./model_v3.svg" alt="Overview of our model">
   </div>
