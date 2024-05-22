@@ -78,7 +78,7 @@
     </div>
   </div>
   
-  <p class="center-align">Hikaru Nakagawa, <a href="https://scholar.google.com/citations?hl=en&user=jtB7J0AAAAAJ" target=“_blank” rel=“noopener noreferrer”>Shoichi Hasegawa*</a>, <a href="https://scholar.google.com/citations?hl=en&user=Y4qjYvMAAAAJ" target=“_blank” rel=“noopener noreferrer”>Yoshinobu Hagiwara</a>, <a href="https://scholar.google.co.jp/citations?user=tsm7qaQAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Akira Taniguchi</a>, <a href="https://scholar.google.co.jp/citations?user=KPxSCJUAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Tadahiro Taniguchi</a></p>
+  <p class="center-align">Hikaru Nakagawa, <a href="https://scholar.google.com/citations?user=KPxSCJUAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Shoichi Hasegawa*</a>, <a href="https://scholar.google.com/citations?user=Y4qjYvMAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Yoshinobu Hagiwara</a>, <a href="https://scholar.google.com/citations?user=jtB7J0AAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Akira Taniguchi</a>, <a href="https://scholar.google.com/citations?user=dPOCLQEAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Tadahiro Taniguchi</a></p>
   
   <div class="github-link">
     <a href="https://github.com/EmergentSystemLabStudent/PointingFrameEstimator/tree/master" target=“_blank” rel=“noopener noreferrer”>Github</a>
@@ -86,13 +86,15 @@
     <a href="" target=“_blank” rel=“noopener noreferrer”>Slide</a> -->
   </div>
 
-  <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/vv9k_wPkfIs?si=8zLy3EsD6SoPXLBy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-  
+
   <!-- <div class="video-container">
       <iframe src="https://www.youtube.com/embed/n8se-MgPi50?si=B5B60-8XXMO-j2CC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div> -->
+
+  <div class="image-container">
+    <img src="./abstract_v3.svg" alt="Overview of abstract">
+    <div class="image-caption">Figure 1: Overview of abstract</div>
+  </div>
   
   <h2 class="fixed-width">Abstract</h2>
   <p class="center-align fixed-width text-justify">
@@ -107,11 +109,45 @@
 
   <h2 class="fixed-width">Approach</h2>
   <p class="center-align fixed-width text-justify">
-    
+  The purpose of our study is to verify the extent to which the performance of pointing frame estimations can be enhanced through the integration of human speech data during human-robot interactions involving gestures and language. 
+  We introduce a pointing frame estimator that leverages human speech information across various scenarios where individuals provide instructions to a robot using gestures and language. 
+　
+  <h2>Conditions</h2>
+    <ol>
+        <li>A scenario involving verbal utterances including daily conversations</li>
+        <li>A scenario in which a user's posture is not consistently upright</li>
+        <li>A scenario in which a user's movements include actions beyond pointing</li>
+      　<li>A scenario in which the referenced object is outside the visual scope of the robot</li>
+    </ol>
+
+  We gather audio-visual time series data from the robot under these specified conditions and train our pointing frame estimator, allowing us to accurately estimate pointing frames in real-world scenarios.
+  We also investigate which audio features are better at estimating pointing frames.
+  We incorporate speech data into the pointing frame estimation framework proposed by Chen et al. to estimate the pointing frame under conditions of natural communication between a human and a daily life service robot. 
+  An overview of the proposed model is depicted in Fig.2.
+  </p>
+
+  <div class="image-container">
+    <img src="./model_v3.svg" alt="Overview of our model">
+    <div class="image-caption">Figure 2: Overview of our model</div>
+  </div>
+
+  <h2 class="fixed-width">Speech and Video Prosessing</h2>
+  <p class="center-align fixed-width text-justify">
+  </p>
+
+  <h2 class="fixed-width">Features Fusion Module</h2>
+  <p class="center-align fixed-width text-justify">
+  </p>
+
+  <h2 class="fixed-width">Object Rectangle Estimator</h2>
+  <p class="center-align fixed-width text-justify">
+  </p>
+
+  <h2 class="fixed-width">Pointing Frame Estimator</h2>
+  <p class="center-align fixed-width text-justify">
   </p>
   
-
-
+    
   <div class="col-md-8">
     <h2 class="text-center">Acknowledgements</h2>
     <p class="text-justify">
