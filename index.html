@@ -38,11 +38,21 @@
       padding: 0;
       text-align: left;
       margin: 0 auto; /* Center align the list */
+      counter-reset: list-counter; /* Initialize the counter */
     }
     
     .list-centered li {
       margin-left: 1.5em; /* Indent list items */
+      position: relative;
     }
+    
+    .list-centered li:before {
+      content: counter(list-counter) ". "; /* Add counter before list items */
+      counter-increment: list-counter; /* Increment the counter */
+      position: absolute;
+      left: -1.5em; /* Adjust position of numbers */
+    }
+
 
     .col-md-8 {
       width: 700px;
@@ -134,6 +144,7 @@
     We incorporate speech data into the pointing frame estimation framework proposed by Chen et al. to estimate the pointing frame under conditions of natural communication between a human and a daily life service robot. 
     An overview of the proposed model is depicted in Figure.
   </p>
+
   
   <div class="image-container">
     <img src="./model_v3.svg" alt="Overview of our model">
