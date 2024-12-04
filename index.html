@@ -72,8 +72,7 @@
               <sup>1</sup>Ritsumeikan University,
               <sup>2</sup>Soka University,
               <sup>3</sup>Kyoto University
-              <br>IEEE International Conference on Systems, Man, and Cybernetics (SMC 2024)
-              <br><span class="publication-awards">Winner of the Best Paper Award in SMC 2024 (1st of 755)!</span>
+              <br><span class="publication-awards">Winner of the Best Paper Award in IEEE SMC 2024 (1st of 755)!</span>
             </span>
             <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span>
           </div>
@@ -253,56 +252,54 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Scenarios of Instructions</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-
-          <!-- First Video -->
-          <div class="video-section1">
-            <h3 class="title is-3">A scenario involving verbal utterances including daily conversations</h3>
-            <div class="publication-video">
-              <video controls width="100%" preload="metadata">
+          <!-- Video Carousel -->
+          <div class="results-carousel">
+            <!-- First Video -->
+            <div class="video-section active">
+              <h3 class="title is-3">A scenario involving verbal utterances including daily conversations</h3>
+              <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/other_utterance_except_instruction.mp4" type="video/mp4">
               </video>
             </div>
-          </div>
 
-          <!-- Second Video -->
-          <div class="video-section2">
-            <h3 class="title is-3">A scenario in which a user's posture is not consistently upright</h3>
-            <div class="publication-video">
-              <video controls width="100%" preload="metadata">
+            <!-- Second Video -->
+            <div class="video-section">
+              <h3 class="title is-3">A scenario in which a user's posture is not consistently upright</h3>
+              <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/no_upright.mp4" type="video/mp4">
               </video>
             </div>
-          </div>
 
-          <!-- Third Video -->
-          <div class="video-section3">
-            <h3 class="title is-3">A scenario in which a user's movements include actions beyond pointing</h3>
-            <div class="publication-video">
-              <video controls width="100%" preload="metadata">
+            <!-- Third Video -->
+            <div class="video-section">
+              <h3 class="title is-3">A scenario in which a user's movements include actions beyond pointing</h3>
+              <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/other_action_except_pointing.mp4" type="video/mp4">
               </video>
             </div>
-          </div>
-          
-          <!-- Fourth Video -->
-          <div class="video-section4">
-            <h3 class="title is-3">A scenario in which the referenced object is outside the visual scope of the robot</h3>
-            <div class="publication-video">
-              <video controls width="100%" preload="metadata">
+
+            <!-- Fourth Video -->
+            <div class="video-section">
+              <h3 class="title is-3">A scenario in which the referenced object is outside the visual scope of the robot</h3>
+              <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/no_reference_object.mp4" type="video/mp4">
               </video>
             </div>
           </div>
-
+          <!-- Navigation Buttons -->
+          <div class="carousel-controls">
+            <button id="prev-button" class="button is-dark">Previous</button>
+            <button id="next-button" class="button is-dark">Next</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- End video -->
 
 

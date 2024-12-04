@@ -123,6 +123,10 @@ body {
 
 .results-carousel video {
   margin: 0;
+  width: 700px; /* 動画の幅を700pxに設定 */
+  height: auto; /* 高さはアスペクト比に基づいて自動調整 */
+  display: block; /* 中央揃えのためにインラインブロックを防止 */
+  margin: 0 auto; /* 中央揃え */
 }
 
 .slider-pagination .slider-page {
