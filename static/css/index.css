@@ -29,6 +29,10 @@ body {
 
 
 .publication-title {
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.2; /* Adjust line height */
+  text-align: center; /* Ensure proper centering */
 }
 
 .publication-banner {
