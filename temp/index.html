@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta name="keywords" content="PointingFrameEstimator">
+  <title>Pointing Frame Estimation with Audio-Visual Time Series Data for Daily Life Service Robots</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .fixed-width {
+      width: 700px;
+      margin: 10px auto;
+    }
+
+    .center-align {
+      text-align: center;
+    }
+
+    .text-justify {
+      text-align: justify;
+    }
+
+    video {
+      width: 700px;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+
+    .list-centered {
+      list-style: none; /* Remove default list style */
+      padding: 0;
+      text-align: left;
+      margin: 0 auto; /* Center align the list */
+      counter-reset: list-counter; /* Initialize the counter */
+    }
+    
+    .list-centered li {
+      margin-left: 1.5em; /* Indent list items */
+      position: relative;
+    }
+    
+    .list-centered li:before {
+      content: counter(list-counter) ". "; /* Add counter before list items */
+      counter-increment: list-counter; /* Increment the counter */
+      position: absolute;
+      left: -1.5em; /* Adjust position of numbers */
+    }
+
+
+    .col-md-8 {
+      width: 700px;
+      margin: 10px auto;
+    }
+
+    .github-link {
+      display: flex;
+      justify-content: center;
+    }
+
+    .github-link a {
+      margin: 10px;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-container img {
+      width: 700px;
+      height: auto;
+    }
+
+    .image-caption {
+      text-align: center;
+      margin-top: 10px; /* Adjust the space between the image and the caption */
+      font-style: italic;
+      color: #555; /* Optional: change the caption color */
+    }
+
+    .video-container {
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .video-container iframe {
+        width: 700px;
+        height: 394px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main">
+    <div class="row">
+      <h2 class="col-md-12">
+         Pointing Frame Estimation with Audio-Visual Time Series Data for Daily Life Service Robots
+      </h2>
+    </div>
+  </div>
+  
+  <p class="center-align">Hikaru Nakagawa, <a href="https://scholar.google.com/citations?user=KPxSCJUAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Shoichi Hasegawa*</a>, <a href="https://scholar.google.com/citations?user=Y4qjYvMAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Yoshinobu Hagiwara</a>, <a href="https://scholar.google.com/citations?user=jtB7J0AAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Akira Taniguchi</a>, <a href="https://scholar.google.com/citations?user=dPOCLQEAAAAJ&hl" target=“_blank” rel=“noopener noreferrer”>Tadahiro Taniguchi</a></p>
+  
+  <div class="github-link">
+    <a href="https://github.com/EmergentSystemLabStudent/PointingFrameEstimator/tree/master" target=“_blank” rel=“noopener noreferrer”>Github</a>
+    <!-- <a href="" target=“_blank” rel=“noopener noreferrer”>Paper</a> -->
+    <a href="https://speakerdeck.com/shoichi_hasegawa/pointing-frame-estimation-with-audio-visual-time-series-data-for-daily-life-service-robots" target=“_blank” rel=“noopener noreferrer”>Slide</a>
+  </div>
+
+
+  <!-- <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/n8se-MgPi50?si=B5B60-8XXMO-j2CC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div> -->
+
+  <div class="image-container">
+    <img src="./abstract_v3.svg" alt="Overview of abstract">
+    <div class="image-caption">Figure 1: Overview of our abstract</div>
+  </div>
+
+  <h2 class="fixed-width">News</h2>
+  <p class="center-align fixed-width text-justify">
+    <span style="color: red;">This paper was selected for Best Paper Award on SMC2024！</span>
+  </p>
+
+  
+  <h2 class="fixed-width">Abstract</h2>
+  <p class="center-align fixed-width text-justify">
+    Daily life support robots in the home environment interpret the user’s pointing and understand the instructions, thereby increasing the number of instructions accomplished.
+    This study aims to improve the estimation performance of pointing frames by using speech information when a person gives pointing or verbal instructions to the robot.
+    The estimation of the pointing frame, which represents the moment when the user points, can help the user understand the instructions. 
+    Therefore, we perform pointing frame estimation using a time-series model, utilizing the user’s speech, images, and speech-recognized text observed by the robot. 
+    In our experiments, we set up realistic communication conditions, such as speech containing everyday conversation, non-upright posture, actions other than pointing, and reference objects outside the robot’s field of view. 
+    The results showed that adding speech information improved the estimation performance, especially the Transformer model with Mel-Spectrogram as a feature. 
+    This study will lead to be applied to object localization and action planning in 3D environments by robots in the future. 
+  </p>
+
+  <h2 class="fixed-width">Approach</h2>
+  <p class="center-align fixed-width text-justify">
+    The purpose of our study is to verify the extent to which the performance of pointing frame estimations can be enhanced through the integration of human speech data during human-robot interactions involving gestures and language. 
+    We introduce a pointing frame estimator that leverages human speech information across various scenarios where individuals provide instructions to a robot using gestures and language.
+  </p>
+  <ul class="fixed-width list-centered">
+    <li>A scenario involving verbal utterances including daily conversations</li>
+    <li>A scenario in which a user's posture is not consistently upright</li>
+    <li>A scenario in which a user's movements include actions beyond pointing</li>
+    <li>A scenario in which the referenced object is outside the visual scope of the robot</li>
+  </ul>
+  <p class="center-align fixed-width text-justify">
+    We gather audio-visual time series data from the robot under these specified conditions and train our pointing frame estimator, allowing us to accurately estimate pointing frames in real-world scenarios.
+    We also investigate which audio features are better at estimating pointing frames.
+    We incorporate speech data into the pointing frame estimation framework proposed by Chen et al. to estimate the pointing frame under conditions of natural communication between a human and a daily life service robot. 
+    An overview of the proposed model is depicted in Figure 2.
+  </p>
+
+  
+  <div class="image-container">
+    <img src="./model_v3.svg" alt="Overview of our model">
+    <div class="image-caption">Figure 2: Overview of our method</div>
+  </div>
+
+<!--   <h2 class="fixed-width">Speech and Video Prosessing</h2>
+  <p class="center-align fixed-width text-justify">
+  Chen et al.'s framework for pointing frame estimation incorporates a textual object reference expression as an input. 
+  However, in actual environments, it is probable that language and gestures beyond reference expressions and pointing are also frequently utilized. 
+  In such scenarios, human speech data could be a pivotal factor in the estimation of pointing frames. 
+  Consequently, this approach leverages the speech uttered by the speaker during pointing to estimate the pointing frame.
+  Initially, speech recognition is executed on the speaker's voice employing the Whisper model as a speech recognition tool. 
+  The framework is expanded by integrating the textual data derived from the recognition outcomes into Chen et al.'s framework.
+  
+  Subsequently, the user's speech is segmented at regular intervals. 
+  The segmented speech is then isolated using an acoustic feature extraction mechanism. 
+  The specifics of this extractor are explained in the experimental section. 
+  These acoustic features serve as input for the pointing frame estimator outlined below. 
+  Simultaneously, the video depicting the act of pointing towards an object is partitioned into frames at consistent intervals corresponding to the audio segmentation.
+  </p>
+
+  <h2 class="fixed-width">Features Fusion Module</h2>
+  <p class="center-align fixed-width text-justify">
+  This module converts and fuses image and text data processed by audio and video processing into various features.
+  Initially, we explain the processing of segmented images in both audio and video. 
+  Two distinct types of processing are conducted on these segmented images. 
+  The first involves the extraction of the user's gesture features. 
+  To accomplish this, we employ the same extraction method as utilized by Chen et al. 
+  Specifically, we utilize Openpose for skeletal detection and MSI-Net for generating a saliency map that represents the region indicated by the speaker. 
+  The features acquired from MSI-Net are then fed into the convolutional layer. 
+    
+  Secondly, we conduct in the process of extracting image features.
+  Subsequently, the textual data derived from the speech recognition underwent processing via BERT, followed by additional processing through two fully concatenated layers. 
+  In this study, we employed the Japanese pre-trained BERT model. 
+  The textual features are derived from the technique of this reference and are integrated with the image features using a technique that accentuates specific regions of the image.
+  
+  Finally, all features are concatenated and input to the object rectangle estimator.
+  </p>
+
+  <h2 class="fixed-width">Object Rectangle Estimator</h2>
+  <p class="center-align fixed-width text-justify">
+  An anchor-based predictor is employed to predict the rectangular region including the object. 
+  The loss of the predictor is the loss related to the difference in rectangular regions (\( L_{bb} \)) and the loss to increase the diversity of the model's attention span (\( L_{atten} \)).
+    The output generated by the predictor includes the XY coordinates of the central point of the rectangular region, as well as the width, height, and confidence score of the region.
+  </p>
+
+  <h2 class="fixed-width">Pointing Frame Estimator</h2>
+  <p class="center-align fixed-width text-justify">
+  As the pointing frame estimator deals with time series data, it is important for the model to incorporate both preceding and subsequent time-series information surrounding the pointing frame. 
+  In this study, we contrast two methods capable of integrating time-series data within the pointing frame estimator.
+
+  Initially, we employ a Transformer based on an Encoder-Decoder model that incorporates the Attention mechanism. 
+  In this study, the Transformer is pre-trained on the YouRefIt dataset by Chen et al. and then fine-tuned using the newly collected dataset in this study. 
+  We construct a three-layer Transformer encoder with four attention heads in both directions. 
+  The input to the Transformer is acoustic features and features derived from an estimator for the rectangular region of the object. 
+  To utilize these features effectively, we have to reduce the dimensionality of the data before inputting it into the Transformer during the fine-tuning phase. 
+  There are two tools utilized for dimensionality reduction. 
+  Initially, we employ a Convolutional Neural Network (CNN) to reduce the dimensionality of the features obtained from the rectangular region estimator. 
+  Following dimensionality reduction via CNN, a weight matrix \( W \) is applied to the acoustic and compressed features, where the diagonal component is set to 1, and Gaussian noise is introduced to the remaining components. 
+  The purpose of \( W \) is to extract the features obtained from the estimator in the rectangular region of the object by setting the diagonal component to 1 while introducing Gaussian noise to the features derived from the voice. 
+  This adjustment aligns the dimensionality of the input data during the fine-tuning process of the Transformer.
+
+  Next, we employ Bidirectional Long Short-Term Memory (Bi-LSTM). 
+  Bi-LSTM is a model that integrates forward and backward LSTMs. 
+  In contrast to the Transformer, Bi-LSTM does not necessitate a large dataset and can be trained from scratch. 
+  Given its training from scratch, Bi-LSTM does not utilize a weight matrix but instead relies on a concatenation of features derived from the rectangular estimator and acoustic features.
+  The output of the pointing frame estimator is a scalar ranging from 0 to 1, meaning the likelihood that the input image corresponds to a pointing frame. 
+  When the output is 1, it means that the image is predicted to be a pointing frame.
+  </p> -->
+
+  <h2 class="fixed-width">Scenario</h2>
+  <p class="center-align fixed-width text-justify">
+  Assumed scenario when the user gives pointing instructions to the robot.
+    
+  <ul class="fixed-width list-centered">
+    <li>A scenario involving verbal utterances including daily conversations</li>
+    <video src="other_utterance_except_instruction.mp4" style="width: 700px; height: auto;" controls></video>
+
+    
+    <li>A scenario in which a user's posture is not consistently upright</li>
+    <video src="no_upright.mp4" style="width: 700px; height: auto;" controls></video>
+
+    
+    <li>A scenario in which a user's movements include actions beyond pointing</li>
+    <video src="other_action_except_pointing.mp4" style="width: 700px; height: auto;" controls></video>
+
+    
+    <li>A scenario in which the referenced object is outside the visual scope of the robot</li>
+    <video src="no_reference_object.mp4" style="width: 700px; height: auto;" controls></video>
+  </ul>
+    
+  </p>
+
+  <div class="col-md-8">
+  <h2 class="text-center">Citation</h2>
+  <p class="text-justify">
+    This paper was accepted on IEEE International Conference on Systems, Man, and Cybernetics (SMC2024), 
+    and the BibTeX for the paper is below. 
+    <textarea id="bibtex" class="form-control" readonly rows="6" cols="105">
+      @inproceedings{pointingframeestimator2024,
+        title={Pointing Frame Estimation with Audio-Visual Time Series Data for Daily Life Service Robots},
+        author={Hikaru Nakagawa and Shoichi Hasegawa and Yoshinobu Hagiwara and Akira Taniguchi and Tadahiro Taniguchi},
+        booktitle={IEEE International Conference on Systems, Man, and Cybernetics (SMC)},
+        year={2024, accepted}
+}</textarea>
+  </p>
+</div>
+
+  <div class="col-md-8">
+    <h2 class="text-center">Other links</h2>
+    <p class="text-justify">
+      <ul>
+        <li><a href="http://www.em.ci.ritsumei.ac.jp/" target=“_blank” rel=“noopener noreferrer”>Laboratory website</a></li>
+        <li><a href="" target=“_blank” rel=“noopener noreferrer”>Demo video of this research</a></li>
+        <li><a href="https://www.youtube.com/watch?v=UBgZGRG00eA" target=“_blank” rel=“noopener noreferrer”>Demo video of related research</a></li>
+      </ul>
+    </p>
+  </div>
+    
+  <div class="col-md-8">
+    <h2 class="text-center">Acknowledgements</h2>
+    <p class="text-justify">
+      This work was supported by JSPS KAKENHI Grants-in-Aid for Scientific Research (Grant Numbers JP23K16975, 22K12212), JST Moonshot Research \& Development Program (Grant Number JPMJMS2011), and JST SPRING, Grant Number JPMJSP2101.
+    </p>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
