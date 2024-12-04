@@ -7,7 +7,7 @@
   <meta name="description" content="PointingImgEst">
   <meta property="og:title" content="PointingImgEst"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="https://nakashimatakeshi.github.io/HF-IGL/"/>
+  <meta property="og:url" content="https://emergentsystemlabstudent.github.io/PointingImgEst/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
@@ -52,19 +52,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Pointing Frame Estimation with Audio-Visual Time Series Data<br>for Daily Life Service Robots</h1>
+          <h1 class="title is-1 publication-title">Pointing Frame Estimation with<br>Audio-Visual Time Series Data<br>for Daily Life Service Robots</h1>
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
               Hikaru Nakagawa<sup>1</sup>,</span>
             <span class="author-block">
-              Shoichi Hasegawa<sup>1</sup>,</span>
+              <a href="https://scholar.google.co.jp/citations?user=KPxSCJUAAAAJ&hl" target="_blank">Shoichi Hasegawa<sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.co.jp/citations?user=jtB7J0AAAAAJ&hl=ja&oi=ao" target="_blank">Yoshinobu Hagiwara<sup>1,2</sup>,</a></span>
+              <a href="https://scholar.google.co.jp/citations?user=Y4qjYvMAAAAJ&hl=ja&oi=ao" target="_blank">Yoshinobu Hagiwara<sup>1,2</sup>,</a></span>
             <span class="author-block">
-              <a href="https://scholar.google.co.jp/citations?user=tsm7qaQAAAAJ&hl=ja&oi=ao" target="_blank">Akira Taniguchi<sup>1</sup>,</a></span>
+              <a href="https://scholar.google.co.jp/citations?user=jtB7J0AAAAAJ&hl=ja&oi=ao" target="_blank">Akira Taniguchi<sup>1</sup>,</a></span>
             <span class="author-block">
-              <a href="https://scholar.google.co.jp/citations?user=dPOCLQEAAAAJ&hl=ja&oi=ao" target="_blank">Tadahiro Taniguch<sup>1,3</sup>,</a></span>
+              <a href="https://scholar.google.co.jp/citations?user=dPOCLQEAAAAJ&hl=ja&oi=ao" target="_blank">Tadahiro Taniguch<sup>1,3</sup></a></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -92,16 +92,16 @@
                 </a>
               </span>
 
-              <!-- Supplementary PDF link -->
-              <!-- <span class="link-block">
-                <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+              <!-- Slide link -->
+              <span class="link-block">
+                <a href="https://speakerdeck.com/shoichi_hasegawa/pointing-frame-estimation-with-audio-visual-time-series-data-for-daily-life-service-robots" target="_blank"
                 class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Supplementary</span>
+                  <span>Slide</span>
                 </a>
-              </span> -->
+              </span>
 
               <!-- Github link -->
               <span class="link-block">
@@ -158,14 +158,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            It remains difficult for mobile robots to continue accurate self-localization when they are suddenly teleported to a location that is different from their beliefs during navigation.
-            By incorporating insights from neuroscience into developing a spatial cognition model for mobile robots, it may become possible to acquire the ability to respond appropriately to changing situations, similar to living organisms.
-            Indeed, recent neuroscience research has shown that during teleportation in rat navigation, neural populations of place cells in the cornu ammonis-3 region of the hippocampus, which are sparse representations of each other, switch discretely.
-            In this study, we construct a spatial cognition model using brain reference architecture-driven development, a method for developing brain-inspired software that is functionally and structurally consistent with the brain.
-            The spatial cognition model was realized by integrating the recurrent state–space model, a world model, with Monte Carlo localization to infer allocentric self-positions within the framework of neuro-symbol emergence in the robotics toolkit.
-            The spatial cognition model, which models the cornu ammonis-1 and -3 regions with each latent variable, demonstrated improved self-localization performance of mobile robots during teleportation in a simulation environment.
-            Moreover, it was confirmed that sparse neural activity could be obtained for the latent variables corresponding to cornu ammonis-3.
-            These results suggest that spatial cognition models that incorporate neuroscience insights can contribute to improving the self-localization technology for mobile robots.
+            Daily life support robots in the home environment interpret the user's pointing and understand the instructions, thereby increasing the number of instructions accomplished.
+            This study aims to improve the estimation performance of pointing frames by using speech information when a person gives pointing or verbal instructions to the robot. 
+            The estimation of the pointing frame, which represents the moment when the user points, can help the user understand the instructions.
+            Therefore, we perform pointing frame estimation using a time-series model, utilizing the user's speech, images, and speech-recognized text observed by the robot.
+            In our experiments, we set up realistic communication conditions, such as speech containing everyday conversation, non-upright posture, actions other than pointing, and reference objects outside the robot's field of view. 
+            The results showed that adding speech information improved the estimation performance, especially the Transformer model with Mel-Spectrogram as a feature. 
+            This study will lead to be applied to object localization and action planning in 3D environments by robots in the future.
           </p>
         </div>
       </div>
@@ -178,7 +177,7 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Hippocampal-formation inspired spatial cognition model</h2>
+      <h2 class="title is-3">Pointing Frame Estimator with Audio-Visual Time Series Data</h2>
       <!-- <div id="results-carousel" class="carousel results-carousel"> -->
         <div class="item">
           <img src="static/images/material1.jpg" alt="image of model"/>
@@ -345,12 +344,11 @@
     <h2 class="title">BibTeX</h2>
     <!-- <pre><code>BibTex Code Here</code></pre> -->
     <pre><code>
-      @ARTICLE{nakashima2024hf,
-        AUTHOR={Nakashima, Takeshi  and Otake, Shunsuke  and Taniguchi, Akira  and Maeyama, Katsuyoshi  and El Hafi, Lotfi  and Taniguchi, Tadahiro  and Yamakawa, Hiroshi },
-        TITLE={Hippocampal formation-inspired global self-localization: quick recovery from the kidnapped robot problem from an egocentric perspective},
-        JOURNAL={Frontiers in Computational Neuroscience},
-        VOLUME={18},
-        YEAR={2024}
+      @inproceedings{nakagawa2024pointing,
+        author={Nakagawa, Hikaru  and Hasegawa, Shoichi  and Hagiwara, Yoshinobu  and Taniguchi, Akira  and Taniguchi, Tadahiro},
+        title={Pointing Frame Estimation with Audio-Visual Time Series Data for Daily Life Service Robots},
+        booktitle={IEEE International Conference on Systems, Man, and Cybernetics (SMC)},
+        year={2024, in press}
       }
     </code></pre>
   </div>
@@ -363,8 +361,7 @@
     <!-- <h2 class="title">Acknowledgements</h2> -->
     <h2 class="title">Funding</h2>
     <p>
-      This research was partially supported by JSPS KAKENHI Grants-in-Aid for Scientific Research, grant
-numbers JP22H05159 and JP23K16975
+      This work was supported by JSPS KAKENHI Grants-in-Aid for Scientific Research (Grant Numbers JP23K16975, 22K12212), JST Moonshot Research & Development Program (Grant Number JPMJMS2011), and JST SPRING, Grant Number JPMJSP2101.
     </p>
   </div>
 </section>
