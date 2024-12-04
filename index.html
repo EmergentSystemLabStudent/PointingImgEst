@@ -254,13 +254,16 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Scenarios of Instructions</h2>
+      <p class="subtitle has-text-centered">
+        We assumed 4 scenarios when the user gives pointing instructions to the robot.
+      </p>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <!-- Video Carousel -->
           <div class="results-carousel">
             <!-- First Video -->
             <div class="video-section active">
-              <h3 class="title is-3">A scenario involving verbal utterances including daily conversations</h3>
+              <h3 class="title is-3">Scenario 1: The verbal utterances include daily conversations</h3>
               <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/other_utterance_except_instruction.mp4" type="video/mp4">
               </video>
@@ -268,7 +271,7 @@
 
             <!-- Second Video -->
             <div class="video-section">
-              <h3 class="title is-3">A scenario in which a user's posture is not consistently upright</h3>
+              <h3 class="title is-3">Scenario 2: The user's posture is not consistently upright</h3>
               <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/no_upright.mp4" type="video/mp4">
               </video>
@@ -276,7 +279,7 @@
 
             <!-- Third Video -->
             <div class="video-section">
-              <h3 class="title is-3">A scenario in which a user's movements include actions beyond pointing</h3>
+              <h3 class="title is-3">Scenario 3: The user's movements involve actions beyond pointing</h3>
               <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/other_action_except_pointing.mp4" type="video/mp4">
               </video>
@@ -284,7 +287,7 @@
 
             <!-- Fourth Video -->
             <div class="video-section">
-              <h3 class="title is-3">A scenario in which the referenced object is outside the visual scope of the robot</h3>
+              <h3 class="title is-3">Scenario 4: The referenced object is outside the robot's visual field</h3>
               <video controls style="width: 700px; height: auto;" preload="metadata">
                 <source src="static/videos/no_reference_object.mp4" type="video/mp4">
               </video>
@@ -345,15 +348,15 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Learned representation(Environment2)</h2>
+      <h2 class="title is-3">Pointing frame estimation results</h2>
       <p>
-        The representation obtained in the latent variable t_t (200 dimensions).<br>
-        Model 2 on the left shows more sparse features than Model 1.
+        We used F1 Score as an evaluation item.<br>
+        The proposed method achieved a high score when utilizing the combination of a Mel-Spectrogram for feature representation and a Transformer for its architecture.
       </p>
       <!-- <div id="results-carousel" class="carousel results-carousel"> -->
 
         <div class="item">
-          <img src="static/images/representations.jpg" alt="image of representations"/>
+          <img src="static/images/pointing_frame_result.png" alt="image of representations"/>
           <!-- <iframe  src="static/pdfs/model2.pdf" width="100%" height="550"></iframe> -->
         </div>
 
@@ -365,17 +368,17 @@
 
 
 <!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/pointingimgest_poster.pdf" width="100%" height="550">
         </iframe>
 
     </div>
   </div>
-</section> -->
+</section>
 <!--End paper poster -->
 
 
