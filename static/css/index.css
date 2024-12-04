@@ -129,6 +129,16 @@ body {
   margin: 0 auto; /* 中央揃え */
 }
 
+.results-carousel .video-section {
+  display: none; /* 非アクティブな動画を非表示 */
+}
+
+.results-carousel .video-section.active {
+  display: block; /* アクティブな動画のみ表示 */
+  text-align: center; /* 動画を中央揃え */
+}
+
+
 .slider-pagination .slider-page {
   background: #000000;
 }
